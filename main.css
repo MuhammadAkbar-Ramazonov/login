@@ -1,0 +1,38 @@
+.hero{
+  margin-top: 200px;
+}
+.site-form{
+  max-width: 500px;
+  height: 545px;
+}
+.pasword-btn{
+  position: absolute;
+  z-index: 10;
+  top: 62px;
+  right: 5px;
+  width: 34px;
+  height: 30px;
+  background-color: transparent;
+  border: 0;
+  background-image: url("./images/show-password.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.pasword-btn-active{
+  top: 190px;
+}
+
+.sign-up{
+  cursor: pointer;
+}
+.sign-in{
+  cursor: pointer;
+}
+
+/* users hape */
+.users-item{
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+}
