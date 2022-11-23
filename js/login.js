@@ -6,8 +6,6 @@ if (token) {
 }
 
 const elSignInForm = document.querySelector(".site-sign-in-form");
-const elForm = document.querySelector(".site-form");
-
 const emailInput = document.querySelector(".search-input");
 const paswordInput = document.querySelector(".password");
 const paswordSignUpInput = document.querySelector(".password-sign-up");
@@ -62,13 +60,6 @@ async function registerPost(){
 }
 }
 
-elSignUpForm.addEventListener("submit", evt => {
-  evt.preventDefault();
-  console.log("ds")
-  
-  registerPost()
-})
-
 async function loginPost(){
   const emailValue =  emailInput.value;
   const passwordValue = paswordInput.value;  
@@ -100,23 +91,35 @@ async function loginPost(){
 }
 }
 
-elForm.addEventListener("submit", function(evt){
-  evt.preventDefault();
-  
-  loginPost()
-})
-
 paswordShow.addEventListener("mousedown", ()=> {
   paswordInput.type = "text";
 });
-
 
 paswordSignUpShow.addEventListener("mousedown", ()=> {
   paswordSignUpInput.type = "text";
 });
 
+paswordSignUpShow.addEventListener("mouseup", ()=> {
+  paswordSignUpInput.type = "password";
+});
+
 window.addEventListener("mouseup", ()=> {
   paswordInput.type = "password";
+  paswordSignUpInput.type = "password";
+})
+
+// events
+elSignUpForm.addEventListener("submit", evt => {
+  evt.preventDefault();
+  console.log("ds")
+  
+  registerPost()
+})
+
+elSignInForm.addEventListener("submit", function(evt){
+  evt.preventDefault();
+  
+  loginPost()
 })
 
 // sign 
@@ -127,7 +130,6 @@ elSignUp.addEventListener("click", ()=>{
   
 })
 
-console.log(elSignIn)
 elSignIn.addEventListener("click", ()=>{
   elSignInForm.classList.remove("d-none");
   
